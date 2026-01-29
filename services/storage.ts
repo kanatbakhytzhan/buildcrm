@@ -1,65 +1,46 @@
 import { Platform } from "react-native";
 
-// На вебе используем localStorage, на нативных платформах — expo-secure-store
-let SecureStore: typeof import("expo-secure-store") | null = null;
-if (Platform.OS !== "web") {
-  SecureStore = require("expo-secure-store");
+/**
+ * Сохраняет строку по ключу.
+ * Web: localStorage. Native: expo-secure-store (require только на native, чтобы не грузить модуль на вебе).
+ */
+export async function setToken(key: string, value: string): Promise<void> {
+  if (Platform.OS === "web") {
+    if (typeof localStorage !== "undefined") {
+      localStorage.setItem(key, value);
+    }
+    return;
+  }
+  const SecureStore = require("expo-secure-store");
+  await SecureStore.setItemAsync(key, value);
 }
 
 /**
- * Сохраняет строку по ключу.
- * Web: localStorage, iOS/Android: expo-secure-store.
- */
-export const saveToken = async (key: string, value: string): Promise<void> => {
-  try {
-    if (Platform.OS === "web") {
-      if (typeof localStorage !== "undefined") {
-        localStorage.setItem(key, value);
-      }
-    } else if (SecureStore) {
-      await SecureStore.setItemAsync(key, value);
-    }
-  } catch (error) {
-    console.error("storage saveToken error:", error);
-  }
-};
-
-/**
  * Возвращает значение по ключу.
- * Web: localStorage, iOS/Android: expo-secure-store.
+ * Web: localStorage. Native: expo-secure-store.
  */
-export const getToken = async (key: string): Promise<string | null> => {
-  try {
-    if (Platform.OS === "web") {
-      if (typeof localStorage !== "undefined") {
-        return localStorage.getItem(key);
-      }
-      return null;
+export async function getToken(key: string): Promise<string | null> {
+  if (Platform.OS === "web") {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem(key);
     }
-    if (SecureStore) {
-      return await SecureStore.getItemAsync(key);
-    }
-    return null;
-  } catch (error) {
-    console.error("storage getToken error:", error);
     return null;
   }
-};
+  const SecureStore = require("expo-secure-store");
+  return await SecureStore.getItemAsync(key);
+}
 
 /**
  * Удаляет значение по ключу.
- * Web: localStorage, iOS/Android: expo-secure-store.
+ * Web: localStorage. Native: expo-secure-store.
  */
-export const deleteToken = async (key: string): Promise<void> => {
-  try {
-    if (Platform.OS === "web") {
-      if (typeof localStorage !== "undefined") {
-        localStorage.removeItem(key);
-      }
-    } else if (SecureStore) {
-      await SecureStore.deleteItemAsync(key);
+export async function deleteToken(key: string): Promise<void> {
+  if (Platform.OS === "web") {
+    if (typeof localStorage !== "undefined") {
+      localStorage.removeItem(key);
     }
-  } catch (error) {
-    console.error("storage deleteToken error:", error);
+    return;
   }
-};
+  const SecureStore = require("expo-secure-store");
+  await SecureStore.deleteItemAsync(key);
+}

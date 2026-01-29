@@ -1,11 +1,11 @@
-import { saveToken as storageSaveToken, getToken as storageGetToken, deleteToken as storageDeleteToken } from "./storage";
+import { setToken as storageSetToken, getToken as storageGetToken, deleteToken as storageDeleteToken } from "./storage";
 
 const BASE_URL = "https://crm-api-5vso.onrender.com";
 const TOKEN_KEY = "auth_token";
 
 // Сохранение токена (web: localStorage, native: SecureStore)
 export const saveToken = async (token: string): Promise<void> => {
-  await storageSaveToken(TOKEN_KEY, token);
+  await storageSetToken(TOKEN_KEY, token);
 };
 
 // Получение токена
