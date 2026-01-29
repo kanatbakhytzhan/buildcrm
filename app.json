@@ -4,6 +4,7 @@
     "slug": "construction-crm",
     "version": "1.0.0",
     "orientation": "portrait",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
       "resizeMode": "contain",
@@ -14,7 +15,11 @@
       "bundleIdentifier": "com.buildcrm.app"
     },
     "android": {
-      "package": "com.buildcrm.app"
+      "package": "com.buildcrm.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      }
     },
     "scheme": "buildcrm",
     "plugins": [
@@ -23,10 +28,14 @@
     "web": {
       "bundler": "metro",
       "output": "static",
+      "favicon": "./assets/icon.png",
       "name": "BuildCRM - Строительная CRM",
       "shortName": "BuildCRM",
       "description": "Система управления строительными заявками",
-      "themeColor": "#1349ec",
+      "display": "standalone",
+      "startUrl": "/",
+      "orientation": "portrait",
+      "themeColor": "#000000",
       "backgroundColor": "#ffffff",
       "lang": "ru"
     }
