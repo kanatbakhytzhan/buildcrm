@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "BuildCRM",
+    "slug": "construction-crm",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#1349ec"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.buildcrm.app"
+    },
+    "android": {
+      "package": "com.buildcrm.app"
+    },
+    "scheme": "buildcrm",
+    "plugins": [
+      "expo-router"
+    ],
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "name": "BuildCRM - Строительная CRM",
+      "shortName": "BuildCRM",
+      "description": "Система управления строительными заявками",
+      "themeColor": "#1349ec",
+      "backgroundColor": "#ffffff",
+      "lang": "ru"
+    }
+  }
+}

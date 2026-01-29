@@ -1,0 +1,632 @@
+=== ЭКРАН 1: РЕГИСТРАЦИЯ ===
+
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BuildCRM - Вход</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1349ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hiding if needed for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#111318] dark:text-white antialiased">
+<!-- Main Container -->
+<div class="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Background Layer with Concrete Texture & Overlay -->
+<div class="absolute inset-0 z-0">
+<!-- Concrete Texture Image -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Blurred industrial concrete wall texture background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDhTu-FQbgewx2RNLMJxLYpNFYoXzvgSNTPaQxJwYoq54kcCvQSr0L9T8VmbwybneD7tpoz_ccF7IcRz5OLySUw8OuwGH0d5as6XqiwmFADMpZaYwUGAtmiZzsjZq78ed6-50DUTcXuTYYuynZmjc7PN16zEPOEYxV4MaAcWj5oxhf1u30tHSOAiCSqAN9WG1xb3cRHvpv-k4OVD_c5qudQkgTzmGUfiYwkGeX03dEjyYNsB361GH1ks2rHk63s4aTrC-BiU9IYbp92');">
+</div>
+<!-- Overlay: White 90% in light mode, Dark 85% in dark mode -->
+<div class="absolute inset-0 bg-white/90 dark:bg-[#101522]/90 backdrop-blur-sm"></div>
+</div>
+<!-- Central Card -->
+<div class="relative z-10 w-full max-w-[400px] p-6 sm:p-8">
+<div class="bg-white dark:bg-[#1a202e] rounded-2xl shadow-2xl border border-white/20 dark:border-gray-700/50 p-8 flex flex-col gap-6">
+<!-- Logo Section -->
+<div class="flex flex-col items-center gap-2 mb-2">
+<!-- Icon Logo (Optional, using a building related icon) -->
+<div class="h-12 w-12 bg-primary/10 rounded-xl flex items-center justify-center mb-2 text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">domain</span>
+</div>
+<h1 class="text-[#111318] dark:text-white tracking-tight text-3xl font-extrabold leading-tight text-center">
+                        BuildCRM
+                    </h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium text-center">
+                        Войдите в ваш рабочий кабинет
+                    </p>
+</div>
+<!-- Form Section -->
+<form action="#" class="flex flex-col gap-5" onsubmit="event.preventDefault();">
+<!-- Email Input -->
+<div class="flex flex-col gap-2">
+<label class="text-[#111318] dark:text-gray-200 text-sm font-semibold leading-normal">
+                            Электронная почта
+                        </label>
+<input class="form-input w-full rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 px-4 h-12 text-[#111318] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 text-base focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all" placeholder="name@company.com" type="email" value=""/>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="text-[#111318] dark:text-gray-200 text-sm font-semibold leading-normal">
+                                Пароль
+                            </label>
+</div>
+<div class="relative flex w-full items-center">
+<input class="form-input w-full rounded-xl border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800/50 px-4 h-12 text-[#111318] dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-500 text-base focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all pr-12" placeholder="••••••••" type="password" value=""/>
+<button class="absolute right-0 top-0 h-full px-4 flex items-center justify-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors" type="button">
+<span class="material-symbols-outlined" style="font-size: 20px;">visibility</span>
+</button>
+</div>
+<!-- Forgot Password Link -->
+<div class="flex justify-end mt-1">
+<a class="text-primary hover:text-blue-700 dark:hover:text-blue-400 text-sm font-semibold transition-colors" href="#">
+                                Забыли пароль?
+                            </a>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full mt-2 cursor-pointer items-center justify-center rounded-xl h-12 px-6 bg-primary hover:bg-blue-700 active:bg-blue-800 text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-blue-500/20 transition-all transform active:scale-[0.98]">
+                        Войти
+                    </button>
+</form>
+<!-- Footer / Sign Up Link -->
+<div class="flex flex-col items-center gap-4 mt-2">
+<div class="w-full h-px bg-gray-100 dark:bg-gray-700"></div>
+<p class="text-gray-500 dark:text-gray-400 text-sm text-center">
+                        Нет аккаунта? 
+                        <a class="text-[#111318] dark:text-white font-bold hover:underline ml-1" href="#">
+                            Свяжитесь с нами
+                        </a>
+</p>
+</div>
+</div>
+<!-- Bottom safe area spacer for mobile feel -->
+<div class="h-6"></div>
+</div>
+</div>
+</body></html>
+
+
+=== ЭКРАН 2: ГЛАВНАЯ (ЗАЯВКИ) ===
+
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Мои Проекты</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2e22",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "1.5rem", 
+                        "xl": "2rem", 
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display antialiased min-h-screen flex flex-col overflow-x-hidden">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md transition-colors duration-300">
+<div class="px-5 pt-12 pb-2 flex items-center justify-between">
+<h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Мои Проекты</h1>
+<button class="relative group">
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-white dark:border-surface-dark shadow-sm">
+<img alt="User Profile Avatar" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFneXR3zs740o6RGPiZbFuKmWtfEAm9uJP9_LBMbUNgPw-gLSbWb8nfV2T0u4xW-2ZyJrVoQAOR9OoPdwKSGMmlMfvwRUIRq0sv9XBuzKCoEaR_1SQSkIk6dk_hQoQoZx18EOxJ2Et0QX6pOIyvHDFYHeeF42rL3MS2v84g-XWr-jP6S9hl5ZlGYkITegAwu3guC6Y8DjCk5yLPE4BVXHyrAOf0m2XpOOC7-250VAF79yURPIro_2AF1UqJ2s0DXAZkJNlWU5o43dG"/>
+</div>
+<div class="absolute bottom-0 right-0 h-3 w-3 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></div>
+</button>
+</div>
+</header>
+<!-- Segmented Control -->
+<div class="px-5 py-2 mt-2">
+<div class="flex p-1 bg-gray-200/50 dark:bg-surface-dark rounded-xl h-12 relative isolate">
+<!-- This radio group handles the switching logic visually via CSS peer/checked classes -->
+<label class="flex-1 relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="status" type="radio" value="new"/>
+<div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-600 shadow-sm opacity-0 peer-checked:opacity-100 transition-all duration-300 z-[-1]"></div>
+<div class="h-full w-full flex items-center justify-center text-sm font-semibold text-gray-500 dark:text-gray-400 peer-checked:text-slate-900 dark:peer-checked:text-white transition-colors">
+                    Новые
+                </div>
+</label>
+<label class="flex-1 relative cursor-pointer group">
+<input class="peer sr-only" name="status" type="radio" value="progress"/>
+<div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-600 shadow-sm opacity-0 peer-checked:opacity-100 transition-all duration-300 z-[-1]"></div>
+<div class="h-full w-full flex items-center justify-center text-sm font-semibold text-gray-500 dark:text-gray-400 peer-checked:text-slate-900 dark:peer-checked:text-white transition-colors">
+                    В работе
+                </div>
+</label>
+<label class="flex-1 relative cursor-pointer group">
+<input class="peer sr-only" name="status" type="radio" value="archive"/>
+<div class="absolute inset-0 rounded-lg bg-white dark:bg-gray-600 shadow-sm opacity-0 peer-checked:opacity-100 transition-all duration-300 z-[-1]"></div>
+<div class="h-full w-full flex items-center justify-center text-sm font-semibold text-gray-500 dark:text-gray-400 peer-checked:text-slate-900 dark:peer-checked:text-white transition-colors">
+                    Архив
+                </div>
+</label>
+</div>
+</div>
+<!-- Main Content List -->
+<main class="flex-1 px-5 py-4 space-y-4 pb-24">
+<!-- Lead Card 1 -->
+<article class="relative bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft overflow-hidden group hover:scale-[0.98] transition-transform duration-200 cursor-pointer">
+<!-- Green Left Border Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-[6px] bg-primary"></div>
+<div class="p-4 pl-6 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Азамат Т.</h3>
+<div class="flex items-center gap-1 mt-1 text-slate-500 dark:text-gray-400">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span class="text-sm font-medium">г. Алматы</span>
+</div>
+</div>
+<span class="text-xs font-semibold text-slate-400 dark:text-gray-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded-md">
+                        Сегодня, 14:30
+                    </span>
+</div>
+<div class="h-px w-full bg-slate-100 dark:bg-white/10"></div>
+<div class="flex justify-between items-end">
+<p class="text-sm text-slate-600 dark:text-gray-300 line-clamp-2">
+<span class="font-semibold text-slate-800 dark:text-gray-200">Запрос:</span> Дом 150м², 2 этажа, современный стиль, панорамные окна.
+                    </p>
+<div class="bg-primary/10 rounded-full p-1.5 ml-2 shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px] block">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Lead Card 2 -->
+<article class="relative bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft overflow-hidden group hover:scale-[0.98] transition-transform duration-200 cursor-pointer">
+<!-- Green Left Border Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-[6px] bg-primary"></div>
+<div class="p-4 pl-6 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Елена С.</h3>
+<div class="flex items-center gap-1 mt-1 text-slate-500 dark:text-gray-400">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span class="text-sm font-medium">г. Астана</span>
+</div>
+</div>
+<span class="text-xs font-semibold text-slate-400 dark:text-gray-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded-md">
+                        Вчера, 09:15
+                    </span>
+</div>
+<div class="h-px w-full bg-slate-100 dark:bg-white/10"></div>
+<div class="flex justify-between items-end">
+<p class="text-sm text-slate-600 dark:text-gray-300 line-clamp-2">
+<span class="font-semibold text-slate-800 dark:text-gray-200">Запрос:</span> Ремонт под ключ, премиум материалы, 3-комн. квартира.
+                    </p>
+<div class="bg-primary/10 rounded-full p-1.5 ml-2 shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px] block">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Lead Card 3 -->
+<article class="relative bg-surface-light dark:bg-surface-dark rounded-2xl shadow-soft overflow-hidden group hover:scale-[0.98] transition-transform duration-200 cursor-pointer">
+<!-- Green Left Border Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-[6px] bg-primary"></div>
+<div class="p-4 pl-6 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<h3 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Дмитрий К.</h3>
+<div class="flex items-center gap-1 mt-1 text-slate-500 dark:text-gray-400">
+<span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+<span class="text-sm font-medium">г. Шымкент</span>
+</div>
+</div>
+<span class="text-xs font-semibold text-slate-400 dark:text-gray-500 bg-slate-100 dark:bg-white/5 px-2 py-1 rounded-md">
+                        Вчера, 18:45
+                    </span>
+</div>
+<div class="h-px w-full bg-slate-100 dark:bg-white/10"></div>
+<div class="flex justify-between items-end">
+<p class="text-sm text-slate-600 dark:text-gray-300 line-clamp-2">
+<span class="font-semibold text-slate-800 dark:text-gray-200">Запрос:</span> Бассейн открытого типа, ландшафтный дизайн участка.
+                    </p>
+<div class="bg-primary/10 rounded-full p-1.5 ml-2 shrink-0">
+<span class="material-symbols-outlined text-primary text-[20px] block">arrow_forward</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Empty State Example (Hidden visually but prepared) -->
+<!-- 
+        <div class="flex flex-col items-center justify-center py-12 text-center opacity-50">
+            <span class="material-symbols-outlined text-6xl text-gray-300 dark:text-gray-600 mb-4">inbox</span>
+            <p class="text-gray-500 dark:text-gray-400">Нет новых проектов</p>
+        </div> 
+        -->
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-lg border-t border-gray-200 dark:border-white/10 pb-6 pt-2 px-6 flex justify-between items-center z-50">
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-primary">
+<span class="material-symbols-outlined text-[26px] font-variation-settings-'FILL'1">folder_open</span>
+<span class="text-[10px] font-medium">Проекты</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[26px]">calendar_today</span>
+<span class="text-[10px] font-medium">Календарь</span>
+</button>
+<div class="relative -top-6">
+<button class="flex items-center justify-center h-14 w-14 bg-slate-900 dark:bg-primary text-white dark:text-black rounded-full shadow-lg hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[26px]">chat_bubble_outline</span>
+<span class="text-[10px] font-medium">Чат</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 p-2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors">
+<span class="material-symbols-outlined text-[26px]">person</span>
+<span class="text-[10px] font-medium">Профиль</span>
+</button>
+</nav>
+</body></html>
+
+
+=== ЭКРАН 3: ДЕТАЛИ ЗАЯВКИ ===
+
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Профиль пользователя</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1349ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem", 
+                        "lg": "2rem", 
+                        "xl": "3rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-[#111318] dark:text-white">
+<!-- Top App Bar -->
+<header class="flex items-center px-4 pt-6 pb-2 justify-between sticky top-0 z-10 bg-background-light dark:bg-background-dark">
+<div class="w-12"></div> <!-- Spacer for alignment -->
+<h2 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Профиль</h2>
+<div class="w-12 flex justify-end">
+<!-- Optional edit icon or empty -->
+</div>
+</header>
+<main class="flex-1 flex flex-col items-center w-full max-w-md mx-auto px-4 pb-8">
+<!-- Profile Header -->
+<div class="w-full py-8 flex flex-col items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-28 w-28 border-4 border-white dark:border-gray-800 shadow-sm" data-alt="Portrait of a professional man in business casual attire" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDR9zQUWNterbOQwHjJe2od0SLnOrs9Scp-t_UJ7r2_1-CggHjSOXLCeb2zhaP5LKEhOkne-XejnFaQF94K3orNZ7U1K8jUea9p6lhh3cbhkgjy26jTRCdDbx6BkKyUynphDMLsK5USoqnBEICtXP_CkgWa-Cb5fLt5S4Ezu4zxNKVZ29a4Pjl-Fj1upeDhAv9B9tRgc5bncnCJc4f620Y3JYiGUlRRpQ-CUj5SXrPCPOeaQaSAgcgilbAUaZTVGi2NnoBmPNe2aKhi");'>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-white rounded-full p-1.5 border-2 border-white dark:border-background-dark flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col items-center text-center">
+<h1 class="text-[#111318] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">Ерлан С.</h1>
+<div class="mt-1 flex items-center gap-2">
+<span class="text-[#616b89] dark:text-gray-400 text-base font-medium">Партнер</span>
+<span class="bg-primary/10 text-primary px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide">Pro</span>
+</div>
+</div>
+</div>
+<!-- Menu List (iOS Style Group) -->
+<div class="w-full flex flex-col gap-px rounded-2xl overflow-hidden bg-white dark:bg-[#1e2330] shadow-sm">
+<!-- Notifications Item -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between bg-white dark:bg-[#1e2330] hover:bg-gray-50 dark:hover:bg-[#252a3a] transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="text-primary bg-primary/10 flex items-center justify-center rounded-full shrink-0 w-10 h-10">
+<span class="material-symbols-outlined">notifications</span>
+</div>
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal flex-1 truncate">Уведомления</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-[#e9e9ea] dark:bg-gray-600 p-0.5 has-[:checked]:bg-primary transition-colors duration-200">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="h-[27px] w-[27px] rounded-full bg-white shadow-sm transition-all duration-200 translate-x-0 peer-checked:translate-x-5"></div>
+</label>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-gray-100 dark:bg-gray-700 ml-16"></div>
+<!-- Schedule Item -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between bg-white dark:bg-[#1e2330] hover:bg-gray-50 dark:hover:bg-[#252a3a] transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="text-primary bg-primary/10 flex items-center justify-center rounded-full shrink-0 w-10 h-10">
+<span class="material-symbols-outlined">calendar_month</span>
+</div>
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal flex-1 truncate">Мое расписание</p>
+</div>
+<div class="shrink-0 text-[#9ca3af] dark:text-gray-500">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+<!-- Divider -->
+<div class="h-px w-full bg-gray-100 dark:bg-gray-700 ml-16"></div>
+<!-- Support Item -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between bg-white dark:bg-[#1e2330] hover:bg-gray-50 dark:hover:bg-[#252a3a] transition-colors cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="text-primary bg-primary/10 flex items-center justify-center rounded-full shrink-0 w-10 h-10">
+<span class="material-symbols-outlined">headset_mic</span>
+</div>
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal flex-1 truncate">Техподдержка</p>
+</div>
+<div class="shrink-0 text-[#9ca3af] dark:text-gray-500">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Logout Button -->
+<div class="w-full mt-8">
+<button class="w-full flex items-center justify-center gap-2 bg-red-50 dark:bg-red-900/20 active:bg-red-100 dark:active:bg-red-900/30 text-red-600 dark:text-red-400 font-bold py-4 rounded-2xl transition-all duration-200">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                Выйти из аккаунта
+            </button>
+<p class="text-center text-xs text-gray-400 mt-4">Версия приложения 2.4.0</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mockup) -->
+<div class="sticky bottom-0 w-full bg-white dark:bg-[#1e2330] border-t border-gray-100 dark:border-gray-800 pb-safe pt-2 px-6 flex justify-between items-end h-20 pb-6 z-20">
+<div class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Главная</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400 hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="text-[10px] font-medium">Проекты</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary cursor-pointer">
+<span class="material-symbols-outlined filled">person</span>
+<span class="text-[10px] font-medium">Профиль</span>
+</div>
+</div>
+</body></html>
+
+
+=== ЭКРАН 4: ПРОФИЛЬ ===
+
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Детали заявки</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1349ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101522",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a202e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "1.5rem", "xl": "2rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean UI */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<div class="relative flex h-full h-screen w-full flex-col overflow-hidden group/design-root">
+<!-- TopAppBar -->
+<header class="flex items-center justify-between px-4 py-3 bg-background-light dark:bg-background-dark z-10 shrink-0">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="text-lg font-bold leading-tight text-slate-900 dark:text-white">Заявка #120</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-white">
+<span class="material-symbols-outlined text-[24px]">more_vert</span>
+</button>
+</header>
+<!-- Scrollable Content Area -->
+<main class="flex-1 overflow-y-auto pb-32 no-scrollbar">
+<div class="flex flex-col items-center px-4 pt-6 pb-8">
+<!-- Hero Section: ProfileHeader -->
+<div class="flex flex-col items-center gap-5 w-full mb-8">
+<div class="relative">
+<div class="bg-center bg-no-repeat bg-cover rounded-full w-32 h-32 shadow-lg ring-4 ring-white dark:ring-surface-dark" data-alt="Portrait of lead Azamat T." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCg1HrT0zypABCEV5KlwY7hsmiDS5mKFBFAUph9BD2CgYIHiYk83_wCeJaklxwh1ybK5ik1sco0Y1rAI8VYFJlT_5OHQCAhegXrE5-VnbXuvDGdXXKtmgYlGAVlQJyVQ5PcUmlHIhfbyQwhdrciXvphNd2jV6CUmBZd8tzZSaLHMVqxuUD6iyhRNbkU9hC0mJS9t8r7wqIbwtg1grOsFgNILsK6Wrs21vKzRt6eVM3MexxAohZOX7Py36BOG395CNik6QT0R23yzt6o");'>
+</div>
+<!-- Status Indicator dot -->
+<div class="absolute bottom-1 right-1 w-6 h-6 bg-green-500 border-4 border-white dark:border-surface-dark rounded-full"></div>
+</div>
+<div class="flex flex-col items-center justify-center">
+<h2 class="text-slate-900 dark:text-white text-[26px] font-extrabold leading-tight tracking-tight text-center">Азамат Т.</h2>
+<p class="text-slate-500 dark:text-slate-400 text-lg font-medium leading-normal text-center mt-1">+7 701 123 45 67</p>
+</div>
+</div>
+<!-- Action Bar: ButtonGroup -->
+<div class="w-full max-w-sm flex gap-3 mb-10">
+<button class="flex-1 flex items-center justify-center gap-2 h-12 px-4 rounded-full bg-[#22c55e] text-white text-sm font-bold shadow-md shadow-green-200 dark:shadow-none hover:bg-green-600 transition-colors">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span class="truncate">Позвонить</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-2 h-12 px-4 rounded-full bg-surface-light dark:bg-surface-dark border-2 border-[#22c55e] text-[#22c55e] text-sm font-bold hover:bg-green-50 dark:hover:bg-green-900/10 transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span class="truncate">WhatsApp</span>
+</button>
+</div>
+<!-- Info Blocks -->
+<div class="w-full max-w-md flex flex-col gap-4">
+<!-- Location Item -->
+<div class="flex items-center gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800/50">
+<div class="flex items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20 shrink-0 w-12 h-12 text-primary">
+<span class="material-symbols-outlined text-[24px]">location_on</span>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wide mb-0.5">Локация</p>
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal truncate">ЖК 'Будущее', кв. 42</p>
+</div>
+<div class="shrink-0 text-slate-300 dark:text-slate-600">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</div>
+</div>
+<!-- Details Item -->
+<div class="flex items-center gap-4 bg-surface-light dark:bg-surface-dark p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800/50">
+<div class="flex items-center justify-center rounded-xl bg-orange-50 dark:bg-orange-900/20 shrink-0 w-12 h-12 text-orange-500">
+<span class="material-symbols-outlined text-[24px]">description</span>
+</div>
+<div class="flex flex-col justify-center flex-1 min-w-0">
+<p class="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-wide mb-0.5">Детали запроса</p>
+<p class="text-slate-900 dark:text-slate-100 text-base font-semibold leading-normal line-clamp-2">Монтаж системы ОВиК, 120 м²</p>
+</div>
+<div class="shrink-0 text-slate-300 dark:text-slate-600">
+<span class="material-symbols-outlined text-[24px]">chevron_right</span>
+</div>
+</div>
+<!-- Map Preview (Visual extra for Location context) -->
+<div class="mt-2 w-full h-32 rounded-2xl overflow-hidden relative shadow-inner">
+<div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 bg-center bg-cover opacity-80" data-alt="Map showing location of the residential complex" data-location="Almaty" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2j7z8xJvCF9q3S9rZQtyY7-UO1q16FeRRo8EmDgUGBCC76wvZ-1rrxkwtLeIReM0kA9wBMW20RQMPoWXbvPtfzggBg_nLOSE6yuMtlFrKITtVhHLqLsXJ4vIiXEr3hWMVelqgDb-raug1Eozss-oLZD5872inhinjQrEFPT-UP0v8s9E5CnLw3xU4-_JJN2Exi2g9Ew9UaxyHO4q7G7WNYOPFjq7GSDl9Z48-yDsmoduDcPHitdL7loQPWsV-E4BeEUT7_zK3uQK8");'>
+</div>
+<div class="absolute inset-0 flex items-center justify-center bg-black/10">
+<div class="bg-white/90 dark:bg-black/70 px-3 py-1.5 rounded-lg text-xs font-bold backdrop-blur-sm">
+                                Показать на карте
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Sticky Bottom Footer -->
+<div class="absolute bottom-0 left-0 right-0 p-4 pb-8 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 z-50">
+<div class="flex gap-3 max-w-md mx-auto w-full">
+<button class="flex items-center justify-center h-14 px-6 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors w-1/3">
+<span class="truncate">Отказать</span>
+</button>
+<button class="flex items-center justify-center h-14 px-6 rounded-full bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/20 flex-1 w-2/3">
+<span class="truncate">Взять в работу</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>
