@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
+    "build:css": "npx tailwindcss -i ./global.css -o ./global-output.css",
+    "prestart": "npm run build:css",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build": "npx expo export -p web"
+    "build": "npm run build:css && npx expo export -p web"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.0",
